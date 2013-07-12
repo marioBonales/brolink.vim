@@ -11,7 +11,7 @@ Video: http://www.youtube.com/watch?v=w4_fkpVQbAQ
 ## Installation and Setup
 To install, either download the repo, or as I would recommend, use [Pathogen](https://github.com/tpope/vim-pathogen).
 
-	git clone git://github.com/jaxbot/brolink.vim.git
+	git clone git://github.com/marioBonales/brolink.vim.git
 
 Once installed, make sure you have Node installed, and run the server program like so:
 

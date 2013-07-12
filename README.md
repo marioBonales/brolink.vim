@@ -24,7 +24,7 @@ Two options:
 
 1. Be lazy and add this to your page(s)
 	
-	<script src='http://127.0.0.1:9001/socket.js'></script>
+	<script src='http://{your-node-server-url}/socket.js'></script>
 
 2. Use GreaseMonkey or Tampermonkey to automatically embed in your local projects, e.g.
 
@@ -76,8 +76,6 @@ If set, Brolink won't try to reload pages/CSS when you save respective files.
 If set, Brolink won't map be, br, and bc commands.
 
 	g:bl_serverpath 
-
-Set if your server is not hosted on 127.0.0.1:9001. You will also need to change the socket.js file.
 
 ## Notes
 

@@ -17,7 +17,7 @@ var connections = [];
 
 var server = http.createServer(function(request, response) {
     console.log("Requested: " + request.url);
-		
+
 	switch (request.url) {
 		case "/reloadCSS":
 			broadcast("___RCSS");
@@ -32,6 +32,7 @@ var server = http.createServer(function(request, response) {
 		break;
 		case "/socket.js":
 			fs.readFile("socket.js", "utf8", function(err,data) {
+				response.setHeader("Content-Type", "application/javascript");
 				response.writeHead(200);
 				response.write(data);
 				response.end();
@@ -44,10 +45,10 @@ var server = http.createServer(function(request, response) {
 			return;
 		break;
 	}
-	
+
 	response.writeHead(200);
     response.end();
-    
+
 });
 
 server.listen(9001, function() {
@@ -60,14 +61,14 @@ wsServer = new WebSocketServer({
 });
 
 wsServer.on('request', function(request) {
-    
+
     var connection = request.accept('', request.origin);
     console.log("Connection accepted.");
-	
+
     connection.on('close', function(reasonCode, description) {
         console.log("Disconnected: " + connection.remoteAddress);
     });
-	
+
 	connections.push(connection);
 });
 
